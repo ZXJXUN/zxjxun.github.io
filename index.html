@@ -12,22 +12,22 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230d9488'/><text x='50' y='66' font-size='44' font-family='Georgia,serif' fill='white' text-anchor='middle'>S</text></svg>">
 <style>
   :root{
-    --bg:#f6fbfa;
+    --bg:#f7fafd;
     --paper:#ffffff;
-    --ink:#1f2937;
+    --ink:#111827;
     --ink-2:#4b5563;
     --ink-3:#6b7280;
-    --line:#e2e8f0;
-    --teal:#0d9488;
-    --teal-dark:#0f766e;
-    --teal-soft:#ecfdf8;
+    --line:#e3eaf3;
+    --teal:#1e6bb8;
+    --teal-dark:#155a9c;
+    --teal-soft:#eaf2fb;
     --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  a{color:var(--teal-dark);text-decoration:none;border-bottom:1px solid #b9e0db;transition:border-color .15s,color .15s}
+  a{color:var(--teal-dark);text-decoration:none;border-bottom:1px solid #c2d9ef;transition:border-color .15s,color .15s}
   a:hover{color:var(--teal);border-bottom-color:var(--teal)}
 
   /* ---------- header ---------- */
@@ -66,7 +66,27 @@
   main p b{color:var(--ink)}
   main p a{font-family:var(--serif)}
 
-  .callout{margin-top:20px;background:var(--teal-soft);border-left:3px solid var(--teal);padding:14px 18px;font-family:var(--serif);font-size:16px;color:#134e4a}
+  .callout{margin-top:20px;background:var(--teal-soft);border-left:3px solid var(--teal);padding:14px 18px;font-family:var(--serif);font-size:16px;color:#123c63}
+
+  /* hero band + CTA */
+  .hero-band{margin-bottom:44px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,#eaf2fb,#f7fafd);box-shadow:0 24px 50px -34px rgba(17,24,39,.4)}
+  .hero-band img{display:block;width:100%;height:auto}
+  .hero-band .cap{font-size:12.3px;color:var(--ink-3);padding:10px 16px;border-top:1px solid var(--line);background:#fff}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:9.5px 18px;border-radius:999px;font-size:14px;font-weight:550;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s,border-color .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--teal);color:#fff;border-bottom:none}
+  .btn-primary:hover{background:var(--teal-dark);box-shadow:0 8px 20px rgba(30,107,184,.28)}
+  .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink-2);border-bottom:1px solid var(--line)}
+  .btn-ghost:hover{border-color:#c9d9ea;color:var(--teal-dark);box-shadow:0 6px 16px rgba(17,24,39,.06)}
+
+  /* figures */
+  .figs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 6px}
+  .figs.one{grid-template-columns:1fr}
+  .figs figure{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .figs img{display:block;width:100%;height:100%;object-fit:cover}
+  .figs figcaption{font-family:var(--sans);font-size:12.2px;color:var(--ink-3);padding:9px 12px;border-top:1px solid var(--line);text-align:left}
+  @media(max-width:760px){.figs{grid-template-columns:1fr}}
 
   /* news */
   .news{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:16px 20px;max-height:280px;overflow-y:auto}
@@ -180,7 +200,19 @@
   <!-- ============ main ============ -->
   <main>
 
-    <section id="bio">
+    <div class="hero-band reveal">
+      <img src="assets/hero-uav.jpg" alt="CAD render of the fixed-wing UAV airframe" loading="eager">
+      <div class="cap">Fixed-wing reconnaissance &amp; strike platform — 1.74 m span, 2.4 kg AUW, fully autonomous mission under 100 s (CUADC 2025, national 2nd prize)</div>
+    </div>
+
+    <div class="cta reveal">
+      <a class="btn btn-primary" href="#projects">View projects →</a>
+      <a class="btn btn-ghost" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/ZXJXUN/ZXJXUN/tree/main/uav-design-report" target="_blank" rel="noopener">Design report ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/ZXJXUN" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+
+    <section id="bio" style="margin-top:44px">
       <h2>Biography</h2>
       <p>
         I am an undergraduate in <b>Robotics Engineering</b> at the <a href="https://www.buaa.edu.cn" target="_blank" rel="noopener">Beihang University</a> (Class of 2027), and an incoming engineering doctorate student in <b>Artificial Intelligence &amp; Big Data</b> at the <a href="https://www.ruc.edu.cn" target="_blank" rel="noopener">Renmin University of China</a> (2027 intake).
@@ -272,6 +304,26 @@
         <div class="meta"><b>Vision algorithm &amp; edge deployment lead</b> · 2024.11 – 2025.10</div>
         <div class="hl"><b>Highlight:</b> end-to-end "perceive–decide–act" loop on Jetson Orin NX 16GB — self-collected and annotated aerial dataset, four-generation YOLO benchmark (YOLO11 selected, mAP@0.5 0.886), three-stage cascade (OBB → de-rotation → CLS + detection), TensorRT FP16 quantisation (12.90 → 4.73 ms/img, &lt;0.5% accuracy loss), CUDA multi-stream pipeline (5 → 24 FPS, 32 → 12 ms latency), RK4 crosswind ballistics for drop correction. In flight: <b>91.8%</b> digit recognition, impact error <b>&lt;1.5 m</b>, full mission <b>&lt;100 s</b>.</div>
         <div class="award">🏆 CUADC <b>National 2nd Prize</b> (3rd place overall)</div>
+        <div class="figs">
+          <figure>
+            <img src="assets/vision-pipeline.jpg" alt="Multi-level YOLO inference pipeline" loading="lazy">
+            <figcaption>Three-stage inference: OBB localisation → de-rotation → CLS + digit detection</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/flight-demo.jpg" alt="35 degree steep climb manoeuvre" loading="lazy">
+            <figcaption>35° steep-climb aerobatic — reaching survey altitude without transit waste</figcaption>
+          </figure>
+        </div>
+        <div class="figs">
+          <figure>
+            <img src="assets/half-roll.jpg" alt="Half-roll aerobatic manoeuvre logged in flight" loading="lazy">
+            <figcaption>Half-roll reversal (log playback) — fast descent and heading change before the strike run</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/gantt.jpg" alt="Design and production Gantt chart" loading="lazy">
+            <figcaption>Parallel design–build schedule across software, airframe and electronics</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="item">
