@@ -3,347 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sun Xun (孙迅) — Robotics · UAV Autonomy · Edge AI</title>
-<meta name="description" content="Sun Xun — Robotics Engineering at Beihang University. Fixed-wing UAV autonomy, on-board vision (YOLO11 / TensorRT / CUDA), flight control.">
-<meta property="og:title" content="Sun Xun (孙迅) — Robotics · UAV Autonomy · Edge AI">
-<meta property="og:description" content="CUADC 2025 national 2nd prize. 91.8% target recognition at 26 FPS on Jetson Orin NX.">
-<meta property="og:image" content="assets/hero-uav.jpg">
+<title>Sun Xun (孙迅) — Homepage</title>
+<meta name="description" content="Sun Xun — Robotics Engineering at Beihang University, incoming engineering doctorate at Renmin University of China. UAV autonomy, on-board vision, edge AI.">
+<meta property="og:title" content="Sun Xun (孙迅) — Homepage">
+<meta property="og:description" content="UAV autonomy, on-board vision (YOLO11 / TensorRT / CUDA), flight control. CUADC national 2nd, ROBOCON national 1st.">
+<meta property="og:image" content="assets/portrait.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e6bb8'/><text x='50' y='68' font-size='52' font-family='system-ui,sans-serif' font-weight='600' fill='white' text-anchor='middle'>S</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230d9488'/><text x='50' y='66' font-size='44' font-family='Georgia,serif' fill='white' text-anchor='middle'>S</text></svg>">
 <style>
   :root{
-    --bg:#fbfbfd;
-    --surface:#ffffff;
-    --ink:#111827;
+    --bg:#f6fbfa;
+    --paper:#ffffff;
+    --ink:#1f2937;
     --ink-2:#4b5563;
     --ink-3:#6b7280;
-    --line:#e5e7eb;
-    --accent:#1e6bb8;
-    --accent-soft:#eaf2fb;
-    --radius:18px;
-    --max:1080px;
+    --line:#e2e8f0;
+    --teal:#0d9488;
+    --teal-dark:#0f766e;
+    --teal-soft:#ecfdf8;
+    --serif:Georgia,"Times New Roman","Songti SC","STSong","SimSun",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    font-feature-settings:"tnum";
-  }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--teal-dark);text-decoration:none;border-bottom:1px solid #b9e0db;transition:border-color .15s,color .15s}
+  a:hover{color:var(--teal);border-bottom-color:var(--teal)}
 
-  /* ---------- nav ---------- */
-  header{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(229,231,235,.7)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:.2px}
-  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-  .navlinks{display:flex;gap:26px;font-size:14.5px;color:var(--ink-2)}
-  .navlinks a{position:relative;padding:4px 0;transition:color .18s}
-  .navlinks a:hover{color:var(--accent)}
-  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--accent);transition:width .22s}
-  .navlinks a:hover::after{width:100%}
-  @media(max-width:720px){.navlinks{display:none}}
+  /* ---------- header ---------- */
+  .topbar{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+  .topbar-in{max-width:1060px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between}
+  .site{display:flex;align-items:center;gap:11px;font-weight:640;font-size:16px;color:var(--ink)}
+  .site .logo{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px}
+  .topnav{display:flex;gap:24px;font-size:14.5px;color:var(--ink-2)}
+  .topnav a{border-bottom:none;color:var(--ink-2)}
+  .topnav a:hover{color:var(--teal)}
+  @media(max-width:820px){.topnav{display:none}}
 
-  /* ---------- hero ---------- */
-  .hero{padding:74px 0 56px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);background:var(--accent-soft);border:1px solid #d7e7f8;padding:5px 12px;border-radius:999px;font-weight:550;letter-spacing:.2px}
-  h1{font-size:clamp(38px,6vw,60px);line-height:1.08;letter-spacing:-1.4px;font-weight:700;margin:20px 0 0}
-  h1 .cn{color:var(--ink-3);font-weight:500;letter-spacing:2px;font-size:.62em;display:inline-block;margin-left:12px;vertical-align:middle}
-  .lede{margin-top:20px;font-size:17.5px;color:var(--ink-2);max-width:62ch}
-  .lede b{color:var(--ink);font-weight:620}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-size:14.5px;font-weight:550;border:1px solid transparent;transition:transform .16s ease, box-shadow .16s ease, background .16s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--ink);color:#fff}
-  .btn-primary:hover{box-shadow:0 8px 22px rgba(17,24,39,.18)}
-  .btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink-2)}
-  .btn-ghost:hover{border-color:#d1d5db;box-shadow:0 6px 16px rgba(17,24,39,.06)}
+  /* ---------- layout ---------- */
+  .layout{max-width:1060px;margin:0 auto;padding:52px 24px 30px;display:grid;grid-template-columns:232px 1fr;gap:56px;align-items:start}
+  @media(max-width:820px){.layout{grid-template-columns:1fr;gap:36px;padding-top:36px}}
 
-  .hero-media{margin-top:46px;border-radius:var(--radius);overflow:hidden;background:linear-gradient(180deg,#eef4fb,#f7fafd);border:1px solid var(--line);box-shadow:0 20px 50px -28px rgba(17,24,39,.35)}
-  .hero-media img{display:block;width:100%;height:auto}
+  /* ---------- sidebar ---------- */
+  .side{position:sticky;top:88px}
+  @media(max-width:820px){.side{position:static}}
+  .avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:top;border:4px solid #fff;box-shadow:0 8px 24px rgba(31,41,55,.14)}
+  .side h1{font-size:21px;margin-top:16px;font-weight:680;letter-spacing:.2px}
+  .side .roles{margin-top:10px;font-size:13.8px;color:var(--ink-2);line-height:1.65}
+  .side .roles b{color:var(--ink);font-weight:600}
+  .contact{margin-top:18px;display:flex;flex-direction:column;gap:9px;font-size:13.8px}
+  .contact a{display:flex;align-items:center;gap:8px;border-bottom:none;color:var(--ink-2)}
+  .contact a:hover{color:var(--teal)}
+  .contact svg{width:15px;height:15px;flex:none;stroke:currentColor}
+  .side-note{margin-top:22px;font-size:12.5px;color:var(--ink-3);line-height:1.6}
 
-  /* ---------- metrics ---------- */
-  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:-1px}
-  .metric{background:var(--surface);padding:26px 22px}
-  .metric .v{font-size:29px;font-weight:680;letter-spacing:-.8px}
-  .metric .v span{font-size:15px;color:var(--ink-3);font-weight:550;margin-left:2px}
-  .metric .k{margin-top:5px;font-size:12.5px;color:var(--ink-3);letter-spacing:.3px;text-transform:uppercase}
-  @media(max-width:760px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  /* ---------- main ---------- */
+  main{min-width:0}
+  section{margin-bottom:54px;scroll-margin-top:80px}
+  h2{font-size:16.5px;font-weight:680;color:var(--ink);padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:20px;letter-spacing:.2px}
+  main p{font-family:var(--serif);font-size:16px;color:#374151;text-align:justify}
+  main p+p{margin-top:13px}
+  main p b{color:var(--ink)}
+  main p a{font-family:var(--serif)}
 
-  /* ---------- sections ---------- */
-  section{padding:78px 0}
-  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:40px}
-  h2{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-3);font-weight:600}
-  .sec-head .idx{font-size:13px;color:#c3c8d0;letter-spacing:1px}
+  .callout{margin-top:20px;background:var(--teal-soft);border-left:3px solid var(--teal);padding:14px 18px;font-family:var(--serif);font-size:16px;color:#134e4a}
 
-  .about-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:52px;align-items:start}
-  @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:34px}}
-  .about p+p{margin-top:16px}
-  .about{font-size:16px;color:var(--ink-2)}
-  .about strong{color:var(--ink);font-weight:620}
+  /* news */
+  .news{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:16px 20px;max-height:280px;overflow-y:auto}
+  .news ul{list-style:none}
+  .news li{padding:5px 0;font-size:14.8px;color:var(--ink-2);font-family:var(--serif)}
+  .news li b{color:var(--teal-dark);font-family:var(--sans);font-size:13.5px;font-weight:640;margin-right:6px}
 
-  .facts{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
-  .fact{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line)}
-  .fact:last-child{border-bottom:0}
-  .fact dt{color:var(--ink-3)}
-  .fact dd{text-align:right;color:var(--ink);font-weight:520}
+  /* publications & projects */
+  .item{margin-bottom:26px}
+  .item:last-child{margin-bottom:0}
+  .item .venue{color:var(--teal-dark);font-weight:680;font-family:var(--sans);font-size:14px;margin-right:6px}
+  .item .title{font-family:var(--serif);font-style:italic;font-size:16.3px;color:var(--ink)}
+  .item .title a{border-bottom:none}
+  .item .meta{margin-top:3px;font-size:14.3px;color:var(--ink-2)}
+  .item .meta b{color:var(--ink);font-weight:600}
+  .item .hl{margin-top:5px;font-size:14.3px;color:var(--ink-2)}
+  .item .hl b{color:var(--teal-dark);font-weight:640;font-family:var(--sans);font-size:13.5px}
+  .item .award{margin-top:4px;font-size:13.3px;color:var(--ink-3)}
+  .item .award b{color:#b45309;font-weight:600}
 
-  /* ---------- project ---------- */
-  .project{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:0 18px 44px -34px rgba(17,24,39,.4)}
-  .project-top{padding:34px 34px 0}
-  .ptag{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;font-weight:560;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 11px;margin-bottom:16px}
-  h3{font-size:27px;letter-spacing:-.6px;font-weight:660;line-height:1.25}
-  .psub{margin-top:10px;color:var(--ink-2);font-size:15.5px;max-width:70ch}
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid var(--line)}
-  .pcell{padding:22px 0 26px;padding-right:24px}
-  .pcell+.pcell{border-left:1px solid var(--line);padding-left:24px}
-  .pcell h4{font-size:12.5px;letter-spacing:.9px;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:9px}
-  .pcell p{font-size:14.3px;color:var(--ink-2)}
-  @media(max-width:820px){.pgrid{grid-template-columns:1fr}.pcell+.pcell{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-right:0}}
-  .project-figs{display:grid;grid-template-columns:1.25fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
-  .project-figs figure{background:var(--surface);padding:0}
-  .project-figs img{display:block;width:100%;height:100%;object-fit:cover}
-  .project-figs figcaption{font-size:12.5px;color:var(--ink-3);padding:11px 16px;border-top:1px solid var(--line)}
-  @media(max-width:820px){.project-figs{grid-template-columns:1fr}}
+  /* education & awards */
+  .edu{margin-bottom:20px}
+  .edu .deg{font-size:16px;font-weight:660}
+  .edu .inst{font-size:14.5px;color:var(--ink-2);margin-top:2px}
+  .edu .inst a{border-bottom:none}
+  .edu .when{font-size:13.3px;color:var(--ink-3);margin-top:1px}
+  .awards-list{margin-top:26px}
+  .awards-list ul{list-style:none}
+  .awards-list li{display:flex;justify-content:space-between;gap:16px;padding:9px 2px;border-bottom:1px dashed var(--line);font-size:14.6px;color:var(--ink-2)}
+  .awards-list li:last-child{border-bottom:0}
+  .awards-list li .y{color:var(--ink-3);white-space:nowrap;font-size:13.3px}
+  .awards-list li b{color:var(--ink);font-weight:600}
+  .awards-list li .lvl{color:var(--teal-dark);white-space:nowrap;font-weight:600;font-size:13.5px}
 
-  /* ---------- list rows ---------- */
-  .rows{border-top:1px solid var(--line)}
-  .row{display:grid;grid-template-columns:120px 1fr auto;gap:22px;padding:20px 4px;border-bottom:1px solid var(--line);align-items:baseline}
-  .row:hover{background:#fff}
-  .row .when{font-size:13px;color:var(--ink-3);letter-spacing:.2px}
-  .row .what{font-size:15.5px}
-  .row .what em{font-style:normal;color:var(--ink-3);display:block;font-size:13.5px;margin-top:3px}
-  .row .tag{font-size:12.5px;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:999px;white-space:nowrap}
-  @media(max-width:720px){.row{grid-template-columns:1fr;gap:6px}.row .tag{justify-self:start}}
+  /* skills */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:6px 34px;font-size:14.6px;color:var(--ink-2)}
+  @media(max-width:720px){.skills{grid-template-columns:1fr}}
+  .skills .sk{padding:7px 0;border-bottom:1px dashed var(--line)}
+  .skills .sk b{color:var(--ink);font-weight:600;font-family:var(--sans);font-size:13.5px;display:block;margin-bottom:2px}
 
-  /* ---------- skills ---------- */
-  .chips{display:flex;flex-wrap:wrap;gap:9px}
-  .chip{font-size:13.5px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);transition:border-color .16s,color .16s}
-  .chip:hover{border-color:#cfd8e3;color:var(--ink)}
-  .skill-group+.skill-group{margin-top:24px}
-  .skill-group h4{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-3);margin-bottom:12px;font-weight:600}
+  footer{border-top:1px solid var(--line);margin-top:20px}
+  .foot-in{max-width:1060px;margin:0 auto;padding:26px 24px 40px;font-size:13.3px;color:var(--ink-3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-  /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--ink-3);font-size:14px}
-  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
-  .foot a{color:var(--ink-2);border-bottom:1px solid transparent;transition:border-color .16s,color .16s}
-  .foot a:hover{color:var(--accent);border-color:#bcd7f0}
-
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+  .reveal{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1)}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <nav>
-      <div class="brand"><span class="dot"></span>ZXJXUN</div>
-      <div class="navlinks">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#awards">Awards</a>
-        <a href="#skills">Skills</a>
-        <a href="https://github.com/ZXJXUN/ZXJXUN" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="site"><span class="logo">S</span>Sun Xun's Homepage</div>
+    <nav class="topnav">
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education &amp; Awards</a>
+      <a href="#skills">Skills</a>
+      <a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
   </div>
-</header>
+</div>
 
-<main>
-  <div class="wrap">
-    <section class="hero" style="padding-top:74px">
-      <span class="eyebrow">Open to research collaboration · 2027 intake PhD</span>
-      <h1>Sun Xun<span class="cn">孙迅</span></h1>
-      <p class="lede">
-        Robotics Engineering at <b>Beihang University</b> · incoming engineering doctorate at <b>Renmin University of China</b>.
-        I build autonomous flight systems — <b>on-board vision</b>, <b>flight control</b> and <b>airframe design</b> — and take them from CAD to competition-winning flight.
+<div class="layout">
+
+  <!-- ============ sidebar ============ -->
+  <aside class="side">
+    <img class="avatar" src="assets/portrait.jpg" alt="Portrait of Sun Xun">
+    <h1>Sun Xun <span style="font-weight:500;color:var(--ink-3);font-size:16px">孙迅</span></h1>
+    <div class="roles">
+      <b>Robotics Engineering</b>, Beihang University<br>
+      Incoming engineering doctorate, Renmin University of China (2027)<br>
+      UAV autonomy · on-board vision · edge AI
+    </div>
+    <div class="contact">
+      <a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" stroke="none"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+      <a href="https://github.com/ZXJXUN/ZXJXUN/tree/main/uav-design-report" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
+        Design report (CUADC)
+      </a>
+      <a href="https://github.com/ZXJXUN/ZXJXUN/tree/main/portfolio" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Portfolio slides
+      </a>
+    </div>
+    <div class="side-note">Last updated Nov 2026 · Beijing, China</div>
+  </aside>
+
+  <!-- ============ main ============ -->
+  <main>
+
+    <section id="bio">
+      <h2>Biography</h2>
+      <p>
+        I am an undergraduate in <b>Robotics Engineering</b> at the <a href="https://www.buaa.edu.cn" target="_blank" rel="noopener">Beihang University</a> (Class of 2027), and an incoming engineering doctorate student in <b>Artificial Intelligence &amp; Big Data</b> at the <a href="https://www.ruc.edu.cn" target="_blank" rel="noopener">Renmin University of China</a> (2027 intake).
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#work">View the UAV project →</a>
-        <a class="btn btn-ghost" href="https://github.com/ZXJXUN/ZXJXUN" target="_blank" rel="noopener">GitHub profile ↗</a>
-        <a class="btn btn-ghost" href="https://github.com/ZXJXUN/ZXJXUN/tree/main/uav-design-report" target="_blank" rel="noopener">Design report (CN) ↗</a>
-      </div>
-      <div class="hero-media reveal">
-        <img src="assets/hero-uav.jpg" alt="CAD render of the fixed-wing UAV airframe" loading="lazy">
-      </div>
-
-      <div class="metrics reveal">
-        <div class="metric"><div class="v">91.8<span>%</span></div><div class="k">Target recognition</div></div>
-        <div class="metric"><div class="v">26<span>FPS</span></div><div class="k">On-board inference</div></div>
-        <div class="metric"><div class="v">+158<span>%</span></div><div class="k">CUDA 4-stream FPS</div></div>
-        <div class="metric"><div class="v">&lt;100<span>s</span></div><div class="k">Full mission time</div></div>
+      <p>
+        I work on <b>autonomy for small fixed-wing UAVs</b>: making perception, decision and control close the loop on a 15&nbsp;W on-board computer in flight. My recent focus is the full edge-AI chain — dataset collection and annotation, YOLO-series detection / classification / rotated-box (OBB) training, TensorRT FP16 quantisation, CUDA multi-stream inference on Jetson, and flight-control integration through ArduPilot and a self-built pymavlink link layer.
+      </p>
+      <p>
+        I got my hands dirty in three national-level student teams — <b>CUADC</b> (fixed-wing UAV, national 2nd prize), <b>ROBOCON</b> (basketball robot, national 1st prize) and the <b>National Intelligent Car Contest</b> (regional 2nd prize) — covering the whole pipeline from sensor selection, EKF state estimation and PCB design to flight tests. Two first-author papers came out of Beihang's Fengru Cup along the way.
+      </p>
+      <div class="callout">
+        I am open to research collaborations and engineering discussions on UAV autonomy, edge-side vision deployment, and embodied intelligence.
       </div>
     </section>
 
-    <section id="about">
-      <div class="sec-head"><h2>About</h2><span class="idx">01</span></div>
-      <div class="about-grid">
-        <div class="about reveal">
-          <p>
-            I work at the intersection of <strong>embodied intelligence</strong> and <strong>edge deployment</strong>: getting a model to run fast and reliably on a 15 W computer flying at 25 m/s, then closing the loop through flight control and mission planning.
-          </p>
-          <p>
-            On the 2025 CUADC <em>fixed-wing UAV reconnaissance &amp; strike</em> project I owned the on-board perception stack — a three-stage YOLO11 cascade (OBB → CLS → detection) with CUDA multi-streaming and TensorRT FP16 — alongside a self-built pymavlink communication module and Lua aerobatic scripts that cut the mission from 103 s to 67 s.
-          </p>
-          <p>
-            Before that: ROBOCON (national 1st prize) for basketball robots with YOPO-based SLAM, and the National Intelligent Car Contest with an electromagnetic-tracking vehicle and EKF state estimation. Two first-author papers from Beihang's Fengru Cup.
-          </p>
-        </div>
-        <dl class="facts reveal">
-          <div class="fact"><dt>Field</dt><dd>Robotics &amp; Autonomous Systems</dd></div>
-          <div class="fact"><dt>Focus</dt><dd>UAV autonomy · Edge AI · Flight control</dd></div>
-          <div class="fact"><dt>Platform</dt><dd>Jetson Orin NX · PX4/ArduPilot · STM32</dd></div>
-          <div class="fact"><dt>Stack</dt><dd>C++ · Python · ROS · TensorRT · CUDA</dd></div>
-          <div class="fact"><dt>Base</dt><dd>Beijing, China</dd></div>
-        </dl>
+    <section id="news">
+      <h2>Recent News</h2>
+      <div class="news reveal">
+        <ul>
+          <li><b>Nov 2026:</b> Personal homepage launched. Portfolio slides and the full CUADC design report are now on <a href="https://github.com/ZXJXUN/ZXJXUN" target="_blank" rel="noopener">GitHub</a>.</li>
+          <li><b>Oct 2026:</b> Admitted to the engineering doctorate program (AI &amp; Big Data) at Renmin University of China, starting Sept 2027.</li>
+          <li><b>Oct 2025:</b> CUADC national finals — fixed-wing UAV reconnaissance &amp; strike, <b>national 2nd prize</b> (3rd place overall).</li>
+          <li><b>Jul 2025:</b> ROBOCON China — basketball robot, <b>national 1st prize</b>.</li>
+          <li><b>Jul 2025:</b> 19th National Intelligent Car Contest — electromagnetic group, regional 2nd prize.</li>
+          <li><b>May 2025:</b> First-author paper accepted at the 2nd Beihang Fengru Cup Innovation Competition (2nd prize).</li>
+          <li><b>May 2024:</b> First-author paper accepted at the 1st Beihang Fengru Cup Innovation Competition (2nd prize).</li>
+          <li><b>Oct 2023:</b> 15th National Mathematics Competition (non-math, group A) — national 2nd prize.</li>
+        </ul>
       </div>
     </section>
 
-    <section id="work" style="padding-top:0">
-      <div class="sec-head"><h2>Selected Work</h2><span class="idx">02</span></div>
-      <article class="project reveal">
-        <div class="project-top">
-          <span class="ptag">CUADC 2025 · National 2nd Prize</span>
-          <h3>Fixed-Wing UAV — Autonomous Reconnaissance &amp; Strike</h3>
-          <p class="psub">
-            A 1.74 m-span, 2.4 kg hand-launched platform that searches four target wells, reads a two-digit marker, decides which one to hit, and delivers a payload — fully autonomously, in under 100 seconds.
-          </p>
-          <div class="pgrid">
-            <div class="pcell">
-              <h4>Perception</h4>
-              <p>YOLO11-OBB rotation-box detection → 128×128 crop and de-rotation → YOLO11-CLS upright classification → digit detection. 91.8% end-to-end accuracy at 26 FPS.</p>
-            </div>
-            <div class="pcell">
-              <h4>Acceleration</h4>
-              <p>CUDA 4-stream concurrency lifts FPS 5 → 24 (+158%) and cuts latency 32 → 12 ms; TensorRT FP16 brings inference to 4.73 ms/img at 0.5085 mAP50-95.</p>
-            </div>
-            <div class="pcell">
-              <h4>Flight &amp; Mission</h4>
-              <p>Custom BLink (pymavlink) link layer, Lua aerobatics — 35° steep climb, half-roll reversal — inserted as autonomous waypoints; crosswind drop compensation via RK4 trajectory integration.</p>
-            </div>
-          </div>
-        </div>
-        <div class="project-figs">
-          <figure>
-            <img src="assets/vision-pipeline.jpg" alt="Multi-level YOLO inference pipeline for target detection" loading="lazy">
-            <figcaption>Three-stage inference pipeline — OBB localisation, upright classification, digit reading</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/flight-demo.jpg" alt="35 degree steep climb manoeuvre in flight" loading="lazy">
-            <figcaption>35° steep-climb aerobatic — reaching survey altitude without wasting transit time</figcaption>
-          </figure>
-        </div>
-      </article>
-    </section>
-
-    <section id="research" style="padding-top:0">
-      <div class="sec-head"><h2>Research &amp; Publications</h2><span class="idx">03</span></div>
-      <div class="rows">
-        <div class="row reveal">
-          <div class="when">2025</div>
-          <div class="what">Balanced energy consumption &amp; predictive supply planning for fixed-wing UAV swarms under multi-UAV coordination<em>2nd Beihang Fengru Cup Innovation Competition · conference paper</em></div>
-          <div class="tag">First author</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2024</div>
-          <div class="what">Multi-channel neural regulation system based on DBS technology<em>1st Beihang Fengru Cup Innovation Competition · conference paper</em></div>
-          <div class="tag">First author</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2026</div>
-          <div class="what">Linglu — embodied intelligent helmet<em>Chinese invention patent, pending (filed 2026)</em></div>
-          <div class="tag">Patent</div>
-        </div>
+    <section id="publications">
+      <h2>Publications &amp; Patents</h2>
+      <div class="item">
+        <span class="venue">[Fengru Cup '25]</span><span class="title">Research on Balanced Energy Consumption &amp; Predictive Supply Planning for Fixed-Wing UAV Swarm under Multi-UAV Coordination</span>
+        <div class="meta"><b>Sun Xun</b> · 2nd Beihang Fengru Cup Innovation Competition, 2025</div>
+        <div class="hl"><b>Highlight:</b> energy-balanced route acquisition and predictive resupply planning for coordinated fixed-wing swarms.</div>
+      </div>
+      <div class="item">
+        <span class="venue">[Fengru Cup '24]</span><span class="title">Research and Development of Multi-Channel Neural Regulation System Based on DBS Technology</span>
+        <div class="meta"><b>Sun Xun</b> · 1st Beihang Fengru Cup Innovation Competition, 2024</div>
+        <div class="hl"><b>Highlight:</b> multi-channel deep-brain-stimulation regulation hardware and control software.</div>
+      </div>
+      <div class="item">
+        <span class="venue">[Patent '26]</span><span class="title" style="font-style:normal">Linglu — Embodied Intelligent Helmet</span>
+        <div class="meta">Chinese invention patent, pending (filed 2026)</div>
+        <div class="hl"><b>Highlight:</b> an on-device embodied-AI wearable; embedded agent runs perception and interaction locally.</div>
       </div>
     </section>
 
-    <section id="awards" style="padding-top:0">
-      <div class="sec-head"><h2>Awards</h2><span class="idx">04</span></div>
-      <div class="rows">
-        <div class="row reveal">
-          <div class="when">2025.10</div>
-          <div class="what">China Universities Aircraft Design Competition (CUADC) — logistics UAV mission flight<em>National 2nd Prize</em></div>
-          <div class="tag">National</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2024</div>
-          <div class="what">ROBOCON — national collegiate robot contest<em>National 1st Prize</em></div>
-          <div class="tag">National</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2024</div>
-          <div class="what">19th National University Student Intelligent Car Contest — electromagnetic group<em>Regional 2nd Prize</em></div>
-          <div class="tag">Regional</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2023</div>
-          <div class="what">15th National Mathematics Competition (non-mathematics, group A)<em>National 2nd Prize</em></div>
-          <div class="tag">National</div>
-        </div>
-        <div class="row reveal">
-          <div class="when">2024–25</div>
-          <div class="what">Beihang University Academic Competition Scholarship<em>1st Prize</em></div>
-          <div class="tag">Scholarship</div>
-        </div>
+    <section id="projects">
+      <h2>Projects &amp; Experience</h2>
+
+      <div class="item">
+        <span class="venue">[CUADC '25]</span><span class="title" style="font-style:normal">YOLO11 Reconnaissance–Strike Integrated Fixed-Wing UAV</span>
+        <div class="meta"><b>Vision algorithm &amp; edge deployment lead</b> · 2024.11 – 2025.10</div>
+        <div class="hl"><b>Highlight:</b> end-to-end "perceive–decide–act" loop on Jetson Orin NX 16GB — self-collected and annotated aerial dataset, four-generation YOLO benchmark (YOLO11 selected, mAP@0.5 0.886), three-stage cascade (OBB → de-rotation → CLS + detection), TensorRT FP16 quantisation (12.90 → 4.73 ms/img, &lt;0.5% accuracy loss), CUDA multi-stream pipeline (5 → 24 FPS, 32 → 12 ms latency), RK4 crosswind ballistics for drop correction. In flight: <b>91.8%</b> digit recognition, impact error <b>&lt;1.5 m</b>, full mission <b>&lt;100 s</b>.</div>
+        <div class="award">🏆 CUADC <b>National 2nd Prize</b> (3rd place overall)</div>
+      </div>
+
+      <div class="item">
+        <span class="venue">[ROBOCON '25]</span><span class="title" style="font-style:normal">Intelligent Basketball Robot</span>
+        <div class="meta"><b>Control system developer</b> · 2025.04 – 2025.07</div>
+        <div class="hl"><b>Highlight:</b> "move–aim–shoot" closed loop — YOPO lidar SLAM for real-time mapping and localisation, YOLO hoop detection, chassis motion planning fused with pneumatic-shooter timing, multi-module process scheduling and hardware-software integration on the real robot.</div>
+        <div class="award">🏆 ROBOCON <b>National 1st Prize</b></div>
+      </div>
+
+      <div class="item">
+        <span class="venue">[Smart Car '25]</span><span class="title" style="font-style:normal">Miniature Electromagnetic Tracking Vehicle</span>
+        <div class="meta"><b>Core member — control algorithm &amp; hardware</b> · 2024.08 – 2025.07</div>
+        <div class="hl"><b>Highlight:</b> multi-sensor (IMU + electromagnetic) selection, calibration and fusion framework; EKF state estimation landed on STM32 for robust localisation and trajectory tracking under ramps, crossings and interference; designed and soldered the full PCB chain — driver, main, sensing, amplifier, transmitter and receiver boards.</div>
+        <div class="award">🏆 National Intelligent Car Contest <b>Regional 2nd Prize</b></div>
+      </div>
+
+      <div class="item">
+        <span class="venue">[CUADC '25]</span><span class="title" style="font-style:normal">Parachute Gliding Control &amp; Precision Delivery Device</span>
+        <div class="meta"><b>Independent project lead</b> · 2024.11 – 2025.10</div>
+        <div class="hl"><b>Highlight:</b> hardware–software co-debugging of a guided parafoil delivery system — electrical loop integration, attitude sensing and precise release actuation on STM32; C++-generated hardware IO configs, CAN/IIC DBC files and simulated flight trajectories building a "virtual-sim ↔ real-hardware" closed loop.</div>
+        <div class="award">🏆 CUADC <b>National 2nd Prize</b> (3rd place overall)</div>
+      </div>
+
+      <div class="item">
+        <span class="venue">[Campus]</span><span class="title" style="font-style:normal">"YuanzhiDa" Academic Q&amp;A Mini-Program — Development Lead</span>
+        <div class="meta"><b>Student work</b> · Chuyuan College Academic Development &amp; Support Center</div>
+        <div class="hl"><b>Highlight:</b> led development of a WeChat mini-program serving peer academic Q&amp;A; also member of Beihang's intelligent-car, aeromodelling and robotics teams.</div>
       </div>
     </section>
 
-    <section id="skills" style="padding-top:0">
-      <div class="sec-head"><h2>Toolkit</h2><span class="idx">05</span></div>
-      <div class="reveal">
-        <div class="skill-group">
-          <h4>Perception &amp; AI</h4>
-          <div class="chips">
-            <span class="chip">PyTorch</span><span class="chip">YOLO11 (det / OBB / CLS)</span><span class="chip">TensorRT</span><span class="chip">CUDA streams</span><span class="chip">OpenCV</span><span class="chip">FP16 / INT8 quantisation</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Flight &amp; Embedded</h4>
-          <div class="chips">
-            <span class="chip">ArduPilot</span><span class="chip">PX4 / PX7</span><span class="chip">Mission Planner</span><span class="chip">pymavlink</span><span class="chip">Lua scripting</span><span class="chip">STM32</span><span class="chip">PCB design</span><span class="chip">Jetson Orin NX</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Engineering</h4>
-          <div class="chips">
-            <span class="chip">C++</span><span class="chip">Python</span><span class="chip">ROS</span><span class="chip">Linux</span><span class="chip">MATLAB</span><span class="chip">SolidWorks</span><span class="chip">AutoCAD</span><span class="chip">Xflr5 / Fluent</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>Certification</h4>
-          <div class="chips">
-            <span class="chip">AOPA UAV pilot license</span><span class="chip">CIT high-level UAV maintenance engineer</span><span class="chip">CET-6</span>
-          </div>
-        </div>
+    <section id="education">
+      <h2>Education &amp; Awards</h2>
+      <div class="edu">
+        <div class="deg">Engineering Doctorate, Artificial Intelligence &amp; Big Data</div>
+        <div class="inst"><a href="https://www.ruc.edu.cn" target="_blank" rel="noopener">Renmin University of China</a> · School of Information</div>
+        <div class="when">2027.09 – 2032.07 (expected)</div>
+      </div>
+      <div class="edu">
+        <div class="deg">B.Eng. in Robotics Engineering</div>
+        <div class="inst"><a href="https://www.buaa.edu.cn" target="_blank" rel="noopener">Beihang University</a> · School of Automation Science and Electrical Engineering</div>
+        <div class="when">2023.09 – 2027.07</div>
+      </div>
+      <div class="awards-list reveal">
+        <ul>
+          <li><span><b>ROBOCON</b> — National Collegiate Robot Contest</span><span class="lvl">National 1st Prize</span><span class="y">2025.07</span></li>
+          <li><span><b>CUADC</b> — China Universities Aircraft Design Competition</span><span class="lvl">National 2nd Prize</span><span class="y">2025.10</span></li>
+          <li><span><b>National Intelligent Car Contest</b> — electromagnetic group</span><span class="lvl">Regional 2nd Prize</span><span class="y">2025.07</span></li>
+          <li><span><b>Beihang Fengru Cup</b> — production group (first author)</span><span class="lvl">2nd Prize × 2</span><span class="y">2024 &amp; 2025</span></li>
+          <li><span><b>National Mathematics Competition</b> — non-math, group A</span><span class="lvl">National 2nd Prize</span><span class="y">2023.10</span></li>
+          <li><span><b>Beihang Academic Competition Scholarship</b></span><span class="lvl">1st Prize</span><span class="y">2024–25</span></li>
+        </ul>
       </div>
     </section>
-  </div>
-</main>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills reveal">
+        <div class="sk"><b>Perception &amp; AI</b>PyTorch · YOLO series (det / CLS / OBB) · TensorRT FP16/INT8 · CUDA multi-stream · OpenCV · dataset collection &amp; annotation</div>
+        <div class="sk"><b>Flight &amp; Embedded</b>PX4 · ArduPilot · Mission Planner · pymavlink · STM32 · PCB design · EKF / sensor fusion</div>
+        <div class="sk"><b>Software</b>C++ · Python · Linux · ROS · MATLAB · JavaScript · React</div>
+        <div class="sk"><b>Design &amp; Certificates</b>SolidWorks · AutoCAD · AOPA UAV pilot license (Mode 2 / Japanese hand) · CIIT UAV maintenance engineer · CET-6</div>
+      </div>
+    </section>
+
+  </main>
+</div>
 
 <footer>
-  <div class="wrap foot">
-    <div>© 2026 Sun Xun · built from scratch, no frameworks</div>
-    <div>
-      <a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://github.com/ZXJXUN/ZXJXUN/tree/main/portfolio" target="_blank" rel="noopener">Portfolio slides</a> ·
-      <a href="https://github.com/ZXJXUN/ZXJXUN/tree/main/uav-design-report" target="_blank" rel="noopener">Design report</a>
-    </div>
+  <div class="foot-in">
+    <div>© 2026 Sun Xun · Last updated Nov 2026</div>
+    <div><a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ZXJXUN/ZXJXUN" target="_blank" rel="noopener">Portfolio repo</a> · <a href="https://zxjxun.github.io" style="border-bottom:none">zxjxun.github.io</a></div>
   </div>
 </footer>
 
 <script>
   const els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
     els.forEach((el) => io.observe(el));
   } else {
     els.forEach((el) => el.classList.add('in'));
