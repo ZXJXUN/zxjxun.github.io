@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sun Xun (孙迅) — Homepage</title>
-<meta name="description" content="Sun Xun — Robotics Engineering at Beihang University, incoming engineering doctorate at Renmin University of China. UAV autonomy, on-board vision, edge AI.">
-<meta property="og:title" content="Sun Xun (孙迅) — Homepage">
-<meta property="og:description" content="UAV autonomy, on-board vision (YOLO11 / TensorRT / CUDA), flight control. CUADC national 2nd, ROBOCON national 1st.">
+<title>Sun Xun (孙迅) — Embodied AI · VLA · Multimodal</title>
+<meta name="description" content="Sun Xun — Robotics Engineering at Beihang University, incoming engineering doctorate at Renmin University of China. Research interests: embodied intelligence, vision-language-action models, world models, multimodal perception.">
+<meta property="og:title" content="Sun Xun (孙迅) — Embodied AI · VLA · Multimodal">
+<meta property="og:description" content="Research interests: embodied intelligence, vision-language-action models, vision-language models, world models, multimodal perception. Engineering foundation in UAV autonomy and edge AI.">
 <meta property="og:image" content="assets/portrait.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230d9488'/><text x='50' y='66' font-size='44' font-family='Georgia,serif' fill='white' text-anchor='middle'>S</text></svg>">
@@ -101,6 +101,14 @@
   .awards-list li b{color:var(--ink);font-weight:600}
   .awards-list li .lvl{color:var(--teal-dark);white-space:nowrap;font-weight:600;font-size:13.5px}
 
+  /* research directions */
+  .dirs{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .dir{background:var(--paper);padding:18px 20px}
+  .dir h3{font-size:15px;font-weight:660;color:var(--ink);margin-bottom:6px;letter-spacing:.1px}
+  .dir h3::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);margin-right:8px;vertical-align:middle;margin-bottom:2px}
+  .dir p{font-family:var(--serif);font-size:14.3px;color:var(--ink-2);text-align:left;line-height:1.62}
+  @media(max-width:760px){.dirs{grid-template-columns:1fr}}
+
   /* skills */
   .skills{display:grid;grid-template-columns:1fr 1fr;gap:6px 34px;font-size:14.6px;color:var(--ink-2)}
   @media(max-width:720px){.skills{grid-template-columns:1fr}}
@@ -121,6 +129,7 @@
   <div class="topbar-in">
     <div class="site"><span class="logo">S</span>Sun Xun's Homepage</div>
     <nav class="topnav">
+      <a href="#research">Research</a>
       <a href="#news">News</a>
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
@@ -140,7 +149,7 @@
     <div class="roles">
       <b>Robotics Engineering</b>, Beihang University<br>
       Incoming engineering doctorate, Renmin University of China (2027)<br>
-      UAV autonomy · on-board vision · edge AI
+      Embodied AI · VLA · VLM · world models
     </div>
     <div class="contact">
       <a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">
@@ -168,13 +177,43 @@
         I am an undergraduate in <b>Robotics Engineering</b> at the <a href="https://www.buaa.edu.cn" target="_blank" rel="noopener">Beihang University</a> (Class of 2027), and an incoming engineering doctorate student in <b>Artificial Intelligence &amp; Big Data</b> at the <a href="https://www.ruc.edu.cn" target="_blank" rel="noopener">Renmin University of China</a> (2027 intake).
       </p>
       <p>
-        I work on <b>autonomy for small fixed-wing UAVs</b>: making perception, decision and control close the loop on a 15&nbsp;W on-board computer in flight. My recent focus is the full edge-AI chain — dataset collection and annotation, YOLO-series detection / classification / rotated-box (OBB) training, TensorRT FP16 quantisation, CUDA multi-stream inference on Jetson, and flight-control integration through ArduPilot and a self-built pymavlink link layer.
+        My research interest is <b>embodied intelligence</b> — how a model turns what it sees and what it is told into physical action. Concretely I am working through <b>vision-language-action (VLA) models</b>, <b>vision-language models (VLM)</b> as the perception-and-reasoning backbone, <b>world models</b> for prediction and planning, and <b>multimodal perception</b> that fuses vision, language and proprioception into one representation. What draws me to this line is the gap between a model that describes the world and a model that acts in it under latency, embodiment and real-world noise.
       </p>
       <p>
-        I got my hands dirty in three national-level student teams — <b>CUADC</b> (fixed-wing UAV, national 2nd prize), <b>ROBOCON</b> (basketball robot, national 1st prize) and the <b>National Intelligent Car Contest</b> (regional 2nd prize) — covering the whole pipeline from sensor selection, EKF state estimation and PCB design to flight tests. Two first-author papers came out of Beihang's Fengru Cup along the way.
+        I come from the deployment side of that problem. Across three national-level student teams — <b>CUADC</b> (fixed-wing UAV, national 2nd prize), <b>ROBOCON</b> (basketball robot, national 1st prize) and the <b>National Intelligent Car Contest</b> — I built perception-to-control loops that had to run on a 15&nbsp;W on-board computer in flight: dataset construction, YOLO-series detection / classification / rotated-box training, TensorRT FP16 quantisation, CUDA multi-stream inference, EKF state estimation, PCB design, flight tests. That engineering base is what I bring into embodied-AI research: I care whether an idea survives contact with real hardware.
       </p>
       <div class="callout">
-        I am open to research collaborations and engineering discussions on UAV autonomy, edge-side vision deployment, and embodied intelligence.
+        I am open to research collaborations and engineering discussions on embodied intelligence, VLA / VLM, world models and robot learning — especially work that has to run on real robots.
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <div class="dirs">
+        <div class="dir">
+          <h3>Embodied Intelligence</h3>
+          <p>Closing the loop between perception, reasoning and action on physical platforms; sample efficiency and robustness when the world pushes back.</p>
+        </div>
+        <div class="dir">
+          <h3>Vision-Language-Action Models</h3>
+          <p>Generalist policies that map instructions and observations to motor commands; action tokenisation, cross-embodiment transfer, data mixtures for manipulation.</p>
+        </div>
+        <div class="dir">
+          <h3>Vision-Language Models</h3>
+          <p>VLM as the perception-and-reasoning backbone for robots: grounding, spatial reasoning and instruction following under real sensor noise.</p>
+        </div>
+        <div class="dir">
+          <h3>World Models</h3>
+          <p>Learned predictive models for planning and imagination — action-conditioned video / dynamics prediction, and how to keep long-horizon rollouts faithful.</p>
+        </div>
+        <div class="dir">
+          <h3>Multimodal Perception</h3>
+          <p>Fusing vision, language, depth and proprioception; representation alignment across modalities and sensor-fusion state estimation on edge devices.</p>
+        </div>
+        <div class="dir">
+          <h3>Edge Deployment for Robot Learning</h3>
+          <p>The systems side I already work on: quantisation, multi-stream inference and latency budgets when large policies must run on a Jetson-class computer.</p>
+        </div>
       </div>
     </section>
 
@@ -214,7 +253,10 @@
     </section>
 
     <section id="projects">
-      <h2>Projects &amp; Experience</h2>
+      <h2>Projects &amp; Engineering Experience</h2>
+      <p style="font-size:14.6px;color:var(--ink-3);margin-bottom:22px;font-family:var(--sans);text-align:left">
+        The hardware-and-deployment side of my work — the base I am building on for embodied-AI research.
+      </p>
 
       <div class="item">
         <span class="venue">[CUADC '25]</span><span class="title" style="font-style:normal">YOLO11 Reconnaissance–Strike Integrated Fixed-Wing UAV</span>
@@ -290,7 +332,7 @@
 
 <footer>
   <div class="foot-in">
-    <div>© 2026 Sun Xun · Last updated Nov 2026</div>
+    <div>© 2026 Sun Xun · Embodied AI · VLA · Multimodal · Last updated Nov 2026</div>
     <div><a href="https://github.com/ZXJXUN" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ZXJXUN/ZXJXUN" target="_blank" rel="noopener">Portfolio repo</a> · <a href="https://zxjxun.github.io" style="border-bottom:none">zxjxun.github.io</a></div>
   </div>
 </footer>
